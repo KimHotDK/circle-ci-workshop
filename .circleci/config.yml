@@ -18,11 +18,11 @@ jobs:
           path: build/libs
           destination: prefix
 
-
-version: 2
-  two_job_flow
-    jobs:
-      - test_feature
-      - test_and_build_master:
-          requires:
-            - test_feature
+workflows:
+  version: 2
+    two_job_flow:
+      jobs:
+        - test_feature
+        - test_and_build_master:
+           requires:
+              - test_feature
