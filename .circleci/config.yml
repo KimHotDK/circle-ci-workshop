@@ -20,7 +20,7 @@ jobs:
 
 
 version: 2
-  two_job_flow:
+  two_job_flow
     jobs:
       - test_feature
       - test_and_build_master:
