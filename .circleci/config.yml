@@ -1,4 +1,3 @@
-
 version: 2.0
 jobs:
   - test_feature:
@@ -20,9 +19,9 @@ jobs:
 
 workflows:
   version: 2
-    two_job_flow
-      jobs:
-        - test_feature
-        - test_and_build_master:
-           requires:
-              - test_feature
+  two_job_flow:
+    jobs:
+      - test_feature
+      - test_and_build_master:
+          requires:
+            - test_feature
