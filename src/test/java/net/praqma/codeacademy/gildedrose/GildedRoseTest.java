@@ -13,20 +13,30 @@ public class GildedRoseTest {
         app.updateQuality();
         assertEquals("foo", app.items[0].name);
     }
+
     @Test
     public void old_brie() {
         Item[] items = new Item[] { new Item("Aged Brie", 0, 1) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertTrue("brie is a higher quality",app.items[0].quality>1 );
-        
+        assertTrue("brie is a higher quality", app.items[0].quality > 1);
+
     }
+
     @Test
     public void never_over_50() {
         Item[] items = new Item[] { new Item("Aged Brie", 0, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertTrue("brie is higher quality than it should be able to",app.items[0].quality==50 );
-        
+        assertTrue("brie is higher quality than it should be able to", app.items[0].quality == 50);
+
+    }
+
+    @Test
+    public void conjuredManaCakeTest() {
+        Item[] items = new Item[] { new Item("Conjured Mana Cake", 10, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(8, app.items[0].quality);
     }
 }

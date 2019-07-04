@@ -19,11 +19,9 @@ class GildedRose {
 
                 }
             }
-            if (items[i].name.equals("Conjured")) {
-                if (items[i].sellIn < 11) {
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality - 2;
-                    }
+            if (items[i].name.equals("Conjured Mana Cake")) {
+                if (items[i].quality < 50) {
+                    items[i].quality = items[i].quality - 2;
                 }
             } else {
                 if (items[i].quality < 50) {
